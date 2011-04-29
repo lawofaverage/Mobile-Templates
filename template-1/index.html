@@ -7,26 +7,6 @@
   <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />  
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script> 
   <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
-  <style type="text/css" media="screen">
-    #chat .ui-icon {
-        background-attachment: scroll;
-        background-clip: border-box;
-        background-color: transparent;
-        background-image: url("icons/mail.jpg");
-        background-origin: padding-box;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: 24px 22px;
-    }
-
-    .nav-glyphish-example .ui-btn .ui-icon {
-        box-shadow: none !important;
-        height: 30px !important;
-        margin-left: -15px !important;
-        width: 30px !important;
-    }
-  </style>
-
   </head>
 <body> 
  
@@ -39,7 +19,9 @@
  
   <div data-role="content"> 
     <h2>Home Page</h2>
-    <p>The links below use the default format.</p>
+    <p>This template is a single html document that builds a set of pages using jQuery Mobile.</p>
+    <p>jQuery Mobile uses the html5 custom attributes <code>(data-*="")</code> to enhance the mark-up.</p>
+    <p>The links below are marked up as a regular unordered list with the <code>data-role=""</code> set to "listview" and the <code>data-transition=""</code>set to "slide"</p>
     <p>&nbsp;</p><!-- let's see what this will do? -->
     <ul data-role="listview">
       <li><a href="#page-two" data-transition="slide">Page Two</a></li>
@@ -47,8 +29,7 @@
       <li><a href="#page-four" data-transition="slide">Page Four</a></li>
     </ul>
     <p>&nbsp;</p><!-- look, here's another one. -->
-    <p>The links are in a regular unordered list with the data-role="" set to "listview".</p>
-    <p>The data-transition="" is set to "slide"</p>
+
         
         
   </div><!-- /content --> 
@@ -73,7 +54,7 @@
     <p>If you refresh the browser, the back button will go away, leaving only the home button as a navigation choice.</p>
     <p><em>The back button is setup to always take you back to where you just came from within the site.</em></p>
     <p>If you refresh the browser and then click on the home button, the back button will show up on the Home page.</p>
-    <p>Now for some buggy stuff: Refresh the page, Click the Home Page icon, come back. The back button is gone. (This my only happen on single page sites like this one.)</p>
+    <p>Now for some buggy stuff: Refresh the page, Click the Home Page icon, come back. The back button is gone. (This my only happen on single page sites like this one.)<em>investigate</em></p>
   </div><!-- /content --> 
   
   <div data-role="footer"> 
@@ -92,10 +73,9 @@
  
   <div data-role="content"> 
     <h2>Page Three</h2> 
-    <p>I'm page three.</p>
     <p><img src="ah_full.jpg" /></p>
-    <p>I have a link to Page Two<br /> 
-       with the data-transition="" set to "flip".<br />
+    <p>Page Three has a link to Page Two<br /> 
+       with the <code>data-transition=""</code> set to "flip".<br />
        Notice that the back button on Page Two will flip you right back here.
     </p>
     <p><a href="#page-two" data-transition="flip">Flip to Page Two Now</a></p>
@@ -121,10 +101,14 @@
  
   <div data-role="content"> 
     <h2>Page Four</h2> 
-    <p>I'm page four.</p>
-    <p>I have the only link to Page Five</p>
-    <p>This link has data-rel="" set to "dialog",<br /> data-transition="" set to "pop", <br /> data-role="" set to "button"<br />and data-inline="true"</p>
-    <p><em>leaving the data-inline="" part off would make the button display the whole way across the screen.</em></p>
+    <p>Page Four has the only link to Page Five (so far)</p>
+    <p>This link has the following settings:<br />
+        <code>data-rel="dialog"</code>, <br /> 
+        <code>data-transition="pop"</code>,<br />
+        <code>data-role="button"</code>,<br />
+        <code>data-inline="true"</code>.
+    </p>
+    <p><em>Leaving the <code>data-inline="true"</code> part off would the display button the whole way across the screen on it's own line.</em></p>
     <p><a href="#page-five" data-rel="dialog" data-transition="pop" data-role="button" data-inline="true">Page Five</a></p> 
   </div><!-- /content --> 
   
@@ -146,8 +130,8 @@
     <p>It's Home Page icon &amp; link have also been removed.</p>
     <p>Clicking the refresh button right now is the wrong idea, but go ahead and get it over with.</p>
     <hr />
-    <p>Ok, now we need some more pages!</p>
-    <p><a href="#page-six" data-transition="fade" data-role="button" data-inline="true">Go to Page Six</a></p>
+    <p>But wait, there's more ...</p>
+    <p><a href="#page-six" data-transition="fade" data-role="button" data-inline="true">Do let's go to Page Six</a></p>
   </div><!-- /content --> 
   
   <div data-role="footer"> 
@@ -165,16 +149,16 @@
  
   <div data-role="content"> 
     <h2>Page Six</h2> 
-    <p>More on lists and links.</p>
+    <p>More about lists and links.</p>
     <p><small>Note: Even though you arrived from Page Five the back button takes you to Page Four.</small></p>
     <hr />
-    <p>Below are page links in a div with the <pre>data-role=""</pre> set to: <pre>"controlgroup"</pre></p>
+    <p>The links below are simply "a" tags in a div with the<br /> <code>data-role=""</code> set to: <code>"controlgroup"</code></p>
     <div data-role="controlgroup">
       <a href="#page-two" data-transition="slide" data-role="button">Page Two</a>
       <a href="#page-three" data-transition="slide" data-role="button">Page Three</a>
       <a href="#page-four" data-transition="slide" data-role="button">Page Four</a>
     </div>
-    <p>Now add <code>data-type="horizontal"</code> to the div and you get this:</p>
+    <p>Here's the same div with the additional attribute <code>data-type="horizontal"</code>:</p>
     <p><small><em>The buttons will wrap if they are too long for the layout, try turning the phone horizontally.</em></small></p>
     <div data-role="controlgroup" data-type="horizontal">
       <a href="#page-two" data-transition="slide" data-direction="reverse" data-role="button" data-icon="arrow-l">Page Two</a>
@@ -183,7 +167,8 @@
     </div>
     <p>The icons and transitions are all customizable using:<pre>data-icon="", data-transition="" and data-direction=""</pre></p>
     <p>&nbsp;</p>
-    <p>There are plenty of options to format lists</p>
+    <p>There are plenty of options to format lists:</p>
+    <p>&nbsp;</p>
     <ul data-role="listview">
       <li data-icon="info">
         <a href="#page-two" data-transition="fade">
@@ -208,7 +193,8 @@
       <li data-icon="false"><a href="#page-four" data-transition="slide">Page Four</a></li>
     </ul>
     <p>&nbsp;</p>
-    <p>Here's that crazy Page Five button again, this time without the <code>data-inline="true"</code>let's see how it acts if we take away the <code>data-rel="dialog"</code> attribute.</p>
+    <p>Here's that crazy Page Five button again, this time without the <code>data-inline="true"</code>.</p>
+    <p>Let's see how it acts if we take away the <code>data-rel="dialog"</code> attribute.</p>
     <p><a href="#page-five" data-transition="pop" data-role="button" data-icon="alert">Page Five</a></p> 
     <p><a href="#page-seven" data-transition="fade" data-role="button" data-icon="gear">Page Seven</a></p> 
     
@@ -236,16 +222,18 @@
 
     <div data-role="content"> 
       <h2>Page Seven</h2>
+      <p>This image is 962x611 pixels, setting the width to 100% makes it play nice on the screen.</p>
+      <p><img width="100%" src="large.jpg" /></p>
     </div><!-- /content --> 
 
     <div data-role="footer"> 
-      <h4>Page Footer</h4> 
       <div data-role="navbar">
         <ul class="nav-glyphish-example">
-          <li><a id="chat" data-icon="custom"  data-theme="a" href="#page-five" data-icon="custom" data-transition="fade">Page Five</a></li>
-          <li><a href="#page-six" data-transition="fade">Page Six</a></li>
+          <li><a data-icon="alert"  data-theme="a" href="#page-five" data-icon="custom" data-transition="fade">Page Five</a></li>
+          <li><a data-icon="gear" href="#page-six" data-transition="fade">Page Six</a></li>
         </ul>
       </div>
+      <h4>Page Footer</h4> 
     </div><!-- /footer --> 
   </div><!-- /page -->
 
