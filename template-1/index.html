@@ -1,0 +1,254 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> 
+  <title>Multi-Page Template 1</title> 
+  <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script> 
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+  <style type="text/css" media="screen">
+    #chat .ui-icon {
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: transparent;
+        background-image: url("icons/mail.jpg");
+        background-origin: padding-box;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 24px 22px;
+    }
+
+    .nav-glyphish-example .ui-btn .ui-icon {
+        box-shadow: none !important;
+        height: 30px !important;
+        margin-left: -15px !important;
+        width: 30px !important;
+    }
+  </style>
+
+  </head>
+<body> 
+ 
+<!-- Start of first page --> 
+<div data-role="page" id="home"> 
+ 
+  <div data-role="header"> 
+    <h1>MP Template 1 Home</h1>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Home Page</h2>
+    <p>The links below use the default format.</p>
+    <p>&nbsp;</p><!-- let's see what this will do? -->
+    <ul data-role="listview">
+      <li><a href="#page-two" data-transition="slide">Page Two</a></li>
+      <li><a href="#page-three" data-transition="slide">Page Three</a></li>
+      <li><a href="#page-four" data-transition="slide">Page Four</a></li>
+    </ul>
+    <p>&nbsp;</p><!-- look, here's another one. -->
+    <p>The links are in a regular unordered list with the data-role="" set to "listview".</p>
+    <p>The data-transition="" is set to "slide"</p>
+        
+        
+  </div><!-- /content --> 
+  
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page --> 
+ 
+ 
+<!-- Start of second page --> 
+<div data-role="page" id="page-two"> 
+ 
+  <div data-role="header"> 
+    <h1>Page Two</h1> 
+    <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Page Two</h2> 
+    <p>You can go back to the home page (or whatever internal page you arrived here from) by clicking the back button</p>
+    <p>If you refresh the browser, the back button will go away, leaving only the home button as a navigation choice.</p>
+    <p><em>The back button is setup to always take you back to where you just came from within the site.</em></p>
+    <p>If you refresh the browser and then click on the home button, the back button will show up on the Home page.</p>
+    <p>Now for some buggy stuff: Refresh the page, Click the Home Page icon, come back. The back button is gone. (This my only happen on single page sites like this one.)</p>
+  </div><!-- /content --> 
+  
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page --> 
+ 
+ 
+<!-- Start of third page --> 
+<div data-role="page" id="page-three"> 
+ 
+  <div data-role="header"> 
+    <h1>Page Three</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Page Three</h2> 
+    <p>I'm page three.</p>
+    <p><img src="ah_full.jpg" /></p>
+    <p>I have a link to Page Two<br /> 
+       with the data-transition="" set to "flip".<br />
+       Notice that the back button on Page Two will flip you right back here.
+    </p>
+    <p><a href="#page-two" data-transition="flip">Flip to Page Two Now</a></p>
+    <hr />
+    <p><pre>Q: How do we get here from an external page?</pre></p>
+    <p><a href="moon.html" target="_blank">To the Moon and Back:</a><pre>(using target="_blank")</pre></p>
+    <p><pre>The link back is href="index.html#page-three"</pre><p>
+    <p><em><small>The back button is not generated for an external page</small></em></p>
+  </div><!-- /content --> 
+  
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page --> 
+
+<!-- Start of fourth page --> 
+<div data-role="page" id="page-four"> 
+ 
+  <div data-role="header"> 
+    <h1>Page Four</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Page Four</h2> 
+    <p>I'm page four.</p>
+    <p>I have the only link to Page Five</p>
+    <p>This link has data-rel="" set to "dialog",<br /> data-transition="" set to "pop", <br /> data-role="" set to "button"<br />and data-inline="true"</p>
+    <p><em>leaving the data-inline="" part off would make the button display the whole way across the screen.</em></p>
+    <p><a href="#page-five" data-rel="dialog" data-transition="pop" data-role="button" data-inline="true">Page Five</a></p> 
+  </div><!-- /content --> 
+  
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page --> 
+
+<!-- Start of fifth page --> 
+<div data-role="page" id="page-five"> 
+ 
+  <div data-role="header"> 
+    <h1>Page Five</h1>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Page Five</h2> 
+    <p>Page Five is written like a page, but the transition to it, specified on Page Four, makes it act like a dialog box. It dosen't get a back button, but it does get a close box.</p>
+    <p>It's Home Page icon &amp; link have also been removed.</p>
+    <p>Clicking the refresh button right now is the wrong idea, but go ahead and get it over with.</p>
+    <hr />
+    <p>Ok, now we need some more pages!</p>
+    <p><a href="#page-six" data-transition="fade" data-role="button" data-inline="true">Go to Page Six</a></p>
+  </div><!-- /content --> 
+  
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page --> 
+
+<!-- Start of fourth page --> 
+<div data-role="page" id="page-six"> 
+ 
+  <div data-role="header"> 
+    <h1>Page Six</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+  </div><!-- /header --> 
+ 
+  <div data-role="content"> 
+    <h2>Page Six</h2> 
+    <p>More on lists and links.</p>
+    <p><small>Note: Even though you arrived from Page Five the back button takes you to Page Four.</small></p>
+    <hr />
+    <p>Below are page links in a div with the <pre>data-role=""</pre> set to: <pre>"controlgroup"</pre></p>
+    <div data-role="controlgroup">
+      <a href="#page-two" data-transition="slide" data-role="button">Page Two</a>
+      <a href="#page-three" data-transition="slide" data-role="button">Page Three</a>
+      <a href="#page-four" data-transition="slide" data-role="button">Page Four</a>
+    </div>
+    <p>Now add <code>data-type="horizontal"</code> to the div and you get this:</p>
+    <p><small><em>The buttons will wrap if they are too long for the layout, try turning the phone horizontally.</em></small></p>
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#page-two" data-transition="slide" data-direction="reverse" data-role="button" data-icon="arrow-l">Page Two</a>
+      <a href="#page-three" data-transition="slideup" data-role="button" data-icon="arrow-d">Page Three</a>
+      <a href="#page-four" data-transition="slide" data-role="button" data-icon="arrow-r">Page Four</a>
+    </div>
+    <p>The icons and transitions are all customizable using:<pre>data-icon="", data-transition="" and data-direction=""</pre></p>
+    <p>&nbsp;</p>
+    <p>There are plenty of options to format lists</p>
+    <ul data-role="listview">
+      <li data-icon="info">
+        <a href="#page-two" data-transition="fade">
+        <h3>Page Two</h3>
+        <p>Everything you've ever wanted to know about Page Two</p>
+        </a>
+      </li>
+      <li data-icon="false">
+        <a href="#page-three" data-transition="slide">
+        <img src="ah_full.jpg" />
+        <h5>See What's on Page Three</h5>
+        <p>Paragraphs will be truncated</p>
+        <p>and an ellipsis will be appended if</p>
+        <p>they get too long for the screen.</p>
+        <p>List item text should be kept brief.</p>
+        <p>Each line here is a new paragraph.</p>
+        <p>In fact paragraphs here won't wrap</p>
+        <p>A long paragraph looks like this: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        </a>
+      </li>
+      <li data-icon="false"><a href="#page-four" data-transition="slide">Page Four</a></li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>Here's that crazy Page Five button again, this time without the <code>data-inline="true"</code>let's see how it acts if we take away the <code>data-rel="dialog"</code> attribute.</p>
+    <p><a href="#page-five" data-transition="pop" data-role="button" data-icon="alert">Page Five</a></p> 
+    <p><a href="#page-seven" data-transition="fade" data-role="button" data-icon="gear">Page Seven</a></p> 
+    
+  </div><!-- /content -->
+  </div><!-- /content --> 
+
+  <div data-role="footer"> 
+    <h4>Page Footer</h4> 
+  </div><!-- /footer --> 
+</div><!-- /page -->
+
+  <!-- Start of seventh page --> 
+  <div data-role="page" id="page-seven"> 
+
+    <div data-role="header"> 
+      <h1>MP Template 1 Home</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-two" data-transition="fade">Page Two</a></li>
+        <li><a href="#page-three" data-transition="fade">Page Three</a></li>
+        <li><a href="#page-four" data-transition="fade">Page Four</a></li>
+      </ul>
+    </div>
+    </div><!-- /header --> 
+
+    <div data-role="content"> 
+      <h2>Page Seven</h2>
+    </div><!-- /content --> 
+
+    <div data-role="footer"> 
+      <h4>Page Footer</h4> 
+      <div data-role="navbar">
+        <ul class="nav-glyphish-example">
+          <li><a id="chat" data-icon="custom"  data-theme="a" href="#page-five" data-icon="custom" data-transition="fade">Page Five</a></li>
+          <li><a href="#page-six" data-transition="fade">Page Six</a></li>
+        </ul>
+      </div>
+    </div><!-- /footer --> 
+  </div><!-- /page -->
+
+
+</body> 
+</html>
